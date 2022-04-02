@@ -52,8 +52,8 @@ public class City {
     }
     public String toString() {
         return String.format(
-            "City #%d: %s (prefix: %s, %d invaders)",
-            id, name, prefix, invaders.size()
+            "City #%d: %s (prefix: %s)",
+            id, name, prefix
         );
     }
 }

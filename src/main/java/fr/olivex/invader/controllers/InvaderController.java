@@ -11,7 +11,6 @@ import fr.olivex.invader.entities.Invader;
 @RestController
 public class InvaderController {
     private final AtomicLong counter = new AtomicLong();
-
     @GetMapping("/invader")
     public Invader invader(@RequestParam(value = "location", defaultValue = "Paris") String location) {
         Invader i = new Invader("PA_0001");

@@ -51,8 +51,11 @@ public class InvaderApplication {
 			vrs02.setPoints((byte)100);
 			invaderRepository.save(vrs02);
 
+			log.info("City list");
+			cityRepository.findAll().forEach(c -> log.info(c.toString()));
+
 			log.info("Invader list");
-			invaderRepository.findAll().forEach(i -> log.info(toString()));
+			invaderRepository.findAll().forEach(i -> log.info(i.toString()));
 			
 		};
 	}

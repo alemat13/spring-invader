@@ -91,8 +91,8 @@ public class Invader {
     }
     public String toString() {
         return String.format(
-            "Invader #%d: %s",
-            name, id
+            "Invader #%d: %s (city: %s)",
+            id, name, city.getName()
         );
     }
 }
