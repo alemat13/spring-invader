@@ -1,10 +1,12 @@
-package fr.olivex.invader.restservice;
+package fr.olivex.invader.controllers;
 
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import fr.olivex.invader.entities.Invader;
 
 @RestController
 public class InvaderController {

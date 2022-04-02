@@ -1,10 +1,21 @@
-package fr.olivex.invader.restservice;
+package fr.olivex.invader.entities;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Invader {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @ManyToOne
     private City city;
     private Byte status;
     private Byte points;
@@ -12,10 +23,12 @@ public class Invader {
     private String gMapsUrl;
     private Double latitude;
     private Double longitude;
+    @ManyToMany
     private List<User> flashedBy;
     public Invader(String name) {
         this.name = name;
     }
+    protected Invader() {}
     public Long getId() {
         return id;
     }
@@ -75,5 +88,11 @@ public class Invader {
     }
     public void setFlashedBy(List<User> flashedBy) {
         this.flashedBy = flashedBy;
+    }
+    public String toString() {
+        return String.format(
+            "Invader #%d: %s",
+            name, id
+        );
     }
 }
